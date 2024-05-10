@@ -15,6 +15,7 @@ canvas.height = (CELL_SIZE + 1) * height + 1;
 canvas.width = (CELL_SIZE + 1) * width + 1;
 
 const ctx = canvas.getContext('2d');
+const fps = 30;
 
 const renderLoop = () => {
     universe.tick();
@@ -24,7 +25,7 @@ const renderLoop = () => {
 
     setTimeout(() => {
         requestAnimationFrame(renderLoop);
-    }, 1000 / 30);
+    }, 1000 / fps);
 }
 
 const drawGrid = () => {
